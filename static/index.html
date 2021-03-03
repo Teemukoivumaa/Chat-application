@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Chat application</title>
+    <style type='text/css'>
+    
+    div.container.bottom {
+        left      : 25%;
+        position: fixed;
+        padding-bottom: 10px;
+        bottom: 0; 
+    }
+
+    #chat {
+        width: 90%;
+        height: 50rem;
+        overflow: auto;
+        left: 45%;
+        position:fixed;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    #rcorners2 {
+        border-radius: 25px;
+        background: #446a10;
+        padding: 20px;
+        min-width: 200px;
+        max-width: 1000px;
+        left: 150px;
+        display: table-cell;
+        word-wrap: break-word;
+        word-break: break-all;
+        height: auto;
+        color: #fff;
+    }
+
+    #rcorners1 {
+        border-radius: 25px;
+        background: #025e6a;
+        padding: 20px;
+        min-width: 200px;
+        max-width:1000px;
+        display: table-cell;
+        word-wrap: break-word;
+        word-break: break-all;
+        height: auto;
+        color: #fff;
+    }
+
+    </style>
+</head>
+<body style="overflow: visible">
+    <div class="container-fluid" >
+        <div id="chat">
+
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div style="clear:both;"></div>
+    <div class="container bottom">
+        <div class="row absolute">
+            <label for="message">Input your message:</label>
+            <input class="form-control" type="text" id="message" name="message">
+            <input type="submit" value="Submit" id="btnSend" style="margin-top: 10px;">
+        </div>
+    </div>
+    <script type="text/javascript" src="../static/bundle.js"></script>
+</body>
+</html>

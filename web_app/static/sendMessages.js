@@ -18,7 +18,7 @@ async function getPage(url) { // get results
 async function sendMessage() { // send message
     var message = document.getElementById('message').value;
     if (message) { // if message empty dont send
-        var url = 'http://78.27.85.73:8080/sendToPhone/' + message
+        var url = 'http://sendToPhone/' + message
         await getPage(url) // send message
         
         var container = document.getElementById('chat'); // set message to screen
@@ -30,7 +30,7 @@ async function sendMessage() { // send message
 }
 
 async function retriveMessage() { // get messages
-    var url = 'http://78.27.85.73:8080/retriveMessageForComputer'
+    var url = 'http://retriveMessageForComputer'
     var response = await getPage(url) // get message
 
     if (response) { // if empty don't put as a message

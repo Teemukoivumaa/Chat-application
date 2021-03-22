@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Chat application</string>
+    <string name="send">Send</string>
+    <string name="sending_field">Sending field</string>
+    <string name="receiving_field">Receiving field</string>
+    <string name="action_text">test</string>
+
+    <string name="registration_failed">Registration failed. Please try again.</string>
+</resources>

@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">Chat application</string>
+    <string name="title_activity_register">Create new account</string>
+
     <string name="send">Send</string>
     <string name="sending_field">Sending field</string>
     <string name="receiving_field">Receiving field</string>
     <string name="action_text">test</string>
+    <string name="username">Username</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="create_account">Create account</string>
 
     <string name="registration_failed">Registration failed. Please try again.</string>
+    <string name="registration_success">Account registered. Welcome to the app!</string>
+
 </resources>

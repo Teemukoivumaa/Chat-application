@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9b6621484.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Chat application - Registering</title>
+    <style type='text/css'>
+        .center {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        .rounded-circle {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h3 class="h3 mb-3 font-weight-normal">Create Account</h3>
+
+        <form class="form-signin">
+            <label for="inputUsername" class="sr-only">Username</label>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <label for="inputPasswordAgain" class="sr-only">Password</label>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" id="inputPasswordAgain" class="form-control" placeholder="Password again" required>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+        </form>
+        <br>
+        <p>Or login with</p>
+        <img src="../assets/google-brands.svg" alt="..." class="rounded-circle">
+        <div class="rounded-circle"> <i class="fab fa-google"></i> </div> <div class="rounded-circle" style="background-color: blue;"> <i class="fab fa-twitter"></i> </div>
+        
+
+    </div>
+
+    <!-- <script type="text/javascript" src="../static/bundle.js"></script> -->
+</body>
+
+</html>

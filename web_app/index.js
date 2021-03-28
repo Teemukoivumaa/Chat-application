@@ -1,7 +1,28 @@
 const path = require('path');
 var express = require('express');
+
 let app = express();
 var port = process.env.PORT || 8080;
+
+const admin = require('firebase-admin');
+var secrets = require("./secrets.js");
+var firebaseConfig = secrets.firebase;
+var serviceAccount = secrets.admin;
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const db = admin.firestore();
+
+async function getAllUsers() {
+    const snapshot = await db.collection('users').get();
+    snapshot.forEach((doc) => {
+        console.log(doc.id, '=>', doc.data());
+    });
+}
+
+getAllUsers();
 
 app.use(express.urlencoded());
 app.use(express.json());
@@ -17,6 +38,16 @@ app.get('/', function(req,res) {
 app.get('/static/bundle.js', function(req,res) {
     console.log("Visitor wants js file");
     res.sendFile(path.join(__dirname+'/static/bundle.js'));
+});
+
+app.get('/register', function(req,res) {
+    console.log("Visitor arrived");
+    res.sendFile(path.join(__dirname+'/static/register.html'));
+});
+
+app.get('/assets/google-brands.svg', function(req,res) {
+    console.log("Visitor wants image file");
+    res.sendFile(path.join(__dirname+'/assets/google-brands.svg'));
 });
 
 app.get('/sendToPhone/:msg', function(req, res) {

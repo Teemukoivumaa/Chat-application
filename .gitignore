@@ -17,3 +17,4 @@
 local.properties
 web_app/node_modules/
 mobile_app/Chatapplication/app/google-services.json
+web_app/secrets.js

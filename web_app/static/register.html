@@ -16,15 +16,27 @@
             position: absolute;
             transform: translate(-50%, -50%);
             text-align: center;
+            padding: 1rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            background-color: #4c4c4c55;
+            border: none;
+            border-radius: 20px;
         }
 
         .form-control {
             margin-bottom: 15px;
         }
 
-        .rounded-circle {
-            background-color: yellow;
+        .circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
         }
+
+        .twitter { background-color: blue; }
+        .google { background-color: chartreuse; }
     </style>
 </head>
 
@@ -70,8 +82,8 @@
         </form>
         <br>
         <p>Or login with</p>
-        <img src="../assets/google-brands.svg" alt="..." class="rounded-circle">
-        <div class="rounded-circle"> <i class="fab fa-google"></i> </div> <div class="rounded-circle" style="background-color: blue;"> <i class="fab fa-twitter"></i> </div>
+        <button class="circle twitter"> <i class="fab fa-google"></i> </button>
+        <button class="circle google"> <i class="fab fa-twitter"></i> </button>
         
 
     </div>

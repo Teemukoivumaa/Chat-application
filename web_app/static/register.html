@@ -2,12 +2,16 @@
 <html lang="en">
 
 <head>
+    <meta name="google-signin-client_id" content="724576936174-t292cksqt2t7rvk4b5sh9lv4ujohfbpm.apps.googleusercontent.com">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/c9b6621484.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/c9b6621484.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Chat application - Registering</title>
     <style type='text/css'>
         .center {
@@ -35,8 +39,44 @@
             border: 1px solid black;
         }
 
-        .twitter { background-color: blue; }
-        .google { background-color: chartreuse; }
+        #signInGoogle {
+            display: inline-block;
+            background: #4285F4;
+            color: rgb(0, 0, 0);
+            width: 190px;
+            border: thin solid #888;
+            box-shadow: 1px 1px 1px grey;
+            white-space: nowrap;
+        }
+
+        #signInGoogle:hover {
+            cursor: pointer;
+            background: #2c75e9;
+        }
+        
+        span.label {
+            font-family: serif;
+            font-weight: normal;
+        }
+
+        span.icon {
+            background: url('../assets/g-normal.png') transparent 5px 50% no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            width: 42px;
+            height: 42px;
+        }
+
+        span.buttonText {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 0px;
+            padding-right: 0px;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+        }
+
     </style>
 </head>
 
@@ -82,13 +122,37 @@
         </form>
         <br>
         <p>Or login with</p>
-        <button class="circle twitter"> <i class="fab fa-google"></i> </button>
-        <button class="circle google"> <i class="fab fa-twitter"></i> </button>
-        
+
+        <div id="my-signin2"></div>
+        <script>
+            function onSuccess(googleUser) {
+                console.log(googleUser.getId());
+                console.log(googleUser.getBasicProfile().getEmail());
+                console.log(googleUser.getBasicProfile().getName());
+            }
+
+            function onFailure(error) {
+                console.log("Error:");
+                console.log(error);
+            }
+
+            function renderButton() {
+                gapi.signin2.render('my-signin2', {
+                    'scope': 'profile email',
+                    'width': 240,
+                    'height': 50,
+                    'longtitle': true,
+                    'theme': 'dark',
+                    'onsuccess': onSuccess,
+                    'onfailure': onFailure
+                });
+            }
+        </script>
+
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
     </div>
 
-    <!-- <script type="text/javascript" src="../static/bundle.js"></script> -->
 </body>
 
 </html>

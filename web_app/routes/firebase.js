@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-var secrets = require("./secrets.js");
+var secrets = require("../secrets.js");
 var firebaseConfig = secrets.firebase;
 var serviceAccount = secrets.admin;
 
@@ -16,4 +16,17 @@ async function getAllUsers() {
     });
 }
 
-//getAllUsers();
+async function registerUser(username, email, password) {
+  const userData = await db.collection('users').add({
+    username: username,
+    email: email,
+    password: password
+  });
+
+  console.log('Added document with ID: ', userData.id);
+}
+
+module.exports = {
+  getAll: getAllUsers, 
+  registerUser: registerUser
+}

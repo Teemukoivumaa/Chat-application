@@ -10,6 +10,8 @@ app.use(express.json());
 var messagesPhone = [];
 var messagesComputer = [];
 
+app.use("/register", require('./routes/register'));
+
 app.get('/', function(req,res) {
     console.log("Visitor arrived");
     res.sendFile(path.join(__dirname+'/static/index.html'));
@@ -18,16 +20,6 @@ app.get('/', function(req,res) {
 app.get('/static/bundle.js', function(req,res) {
     console.log("Visitor wants js file");
     res.sendFile(path.join(__dirname+'/static/bundle.js'));
-});
-
-app.get('/register', function(req,res) {
-    console.log("Visitor arrived");
-    res.sendFile(path.join(__dirname+'/static/register.html'));
-});
-
-app.get('/assets/google-brands.svg', function(req,res) {
-    console.log("Visitor wants image file");
-    res.sendFile(path.join(__dirname+'/assets/google-brands.svg'));
 });
 
 app.get('/sendToPhone/:msg', function(req, res) {
